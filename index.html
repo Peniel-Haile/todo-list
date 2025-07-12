@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>My To-Do List</h1>
+
+  <div class="dashboard">
+    <div class="stat">
+      <h2>Total</h2>
+      <div id="totalTasks">0</div>
+    </div>
+    <div class="stat">
+      <h2>Completed</h2>
+      <div id="completedTasks">0</div>
+    </div>
+    <div class="stat">
+      <h2>To Do</h2>
+      <div id="todoTasks">0</div>
+    </div>
+    <div class="stat">
+      <h2>Overdue</h2>
+      <div id="overdueTasks">0</div>
+    </div>
+    <div class="progress-box">
+      <h2>Progress</h2>
+      <div class="circle-progress" id="progressCircle" style="--progress: 0%">
+        <div class="circle-text" id="progressPercent">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-controls">
+    <input type="text" id="taskInput" placeholder="New task" />
+    <select id="priorityInput">
+      <option value="">Select Priority</option>
+      <option value="Low">Low</option>
+      <option value="Medium" selected>Medium</option>
+      <option value="High">High</option>
+    </select>
+    <select id="statusInput">
+      <option value="">Select Status</option>
+      <option value="Not Started" selected>Not Started</option>
+      <option value="In-Progress">In-Progress</option>
+      <option value="Completed">Completed</option>
+      <option value="Overdue">Overdue</option>
+    </select>
+    <input type="date" id="dateInput" />
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <table id="taskTable" class="hide-delete-column">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th>Days Left</th>
+        <th class="delete-col"></th>
+      </tr>
+    </thead>
+    <tbody id="taskBody"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
